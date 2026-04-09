@@ -1,22 +1,33 @@
+<?php
+/*
+|--------------------------------------------------------------------------
+| সোর্স কোড প্রোটেকশন লেয়ার
+|--------------------------------------------------------------------------
+| এই অংশটুকু কেউ সোর্স কোড দেখতে চাইলে তাকে শুধু ৪৩ এরর দেখাবে।
+*/
+if (isset($_GET['view_source']) || strpos($_SERVER['HTTP_USER_AGENT'], 'CloudFlare') !== false) {
+    die('<html><head><title>403 Forbidden</title></head><body><center><h1>403 Forbidden</h1></center><hr><center>openresty</center></body></html>');
+}
+?>
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-    <meta name="google-site-verification" content="FJ49obY_cHSQb_7985nkSSUDWvkJ94jbfN5wh1oM-Cc" />
-    
-    <meta charset="UTF-8">
+<script>
+    document.addEventListener('contextmenu', event => event.preventDefault());
+    document.onkeydown = function(e) {
+        if(e.keyCode == 123 || (e.ctrlKey && e.shiftKey && (e.keyCode == 'I'.charCodeAt(0) || e.keyCode == 'J'.charCodeAt(0) || e.keyCode == 'C'.charCodeAt(0))) || (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0))) {
+            return false;
+        }
+    }
+</script>
+
+   <meta name="google-site-verification" content="FJ49obY_cHSQb_7985nkSSUDWvkJ94jbfN5wh1oM-Cc" />
+     
+<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AFX ESPOS - গেমিং প্ল্যাটফর্ম</title>
-
-    <meta name="description" content="AFX ESPOS - বাংলাদেশের সেরা Free Fire এবং Ludo টুর্নামেন্ট প্ল্যাটফর্ম। এখনই APK ডাউনলোড করুন এবং প্রতিদিন পুরস্কার জিতুন।">
-    <meta name="keywords" content="AFX ESPOS, Free Fire Tournament App, Ludo Tournament, Gaming Platform Bangladesh, AFX ESPOS APK">
-    <meta name="author" content="Developer Sadik">
-    <meta name="robots" content="index, follow">
-
-    <meta property="og:title" content="AFX ESPOS - খেলুন এবং জিতুন">
-    <meta property="og:description" content="Free Fire এবং Ludo টুর্নামেন্টে অংশ নিন।">
-    <meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/pipobazer-8bcf2.appspot.com/o/image%2F1000052830.png?alt=media&token=37a64d23-8d98-4b83-a5fd-31cd3a48aadc">
-    <meta property="og:url" content="https://afx-espos.vercel.app/">
-
+    
+    <!-- Fonts & Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
@@ -30,7 +41,7 @@
             scroll-behavior: smooth;
         }
 
-        /* ডার্ক টাইলস ব্যাকগ্রাউন্ড */
+        /* ডার্ক টাইলস ব্যাকগ্রাউন্ড (২য় কোড থেকে অনুপ্রাণিত) */
         body {
             font-family: 'Hind Siliguri', sans-serif;
             background-color: #0f172a;
@@ -114,7 +125,7 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Hero Section */
+        /* Hero / Header Section */
         .header {
             text-align: center;
             padding: 40px 20px 20px;
@@ -234,9 +245,6 @@
             background: #fff;
             border-radius: 22px;
             padding: 5px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
         .phone-screen-logo img { width: 100%; border-radius: 18px; }
 
@@ -251,6 +259,7 @@
         .footer-title { display: block; font-size: 22px; font-weight: 700; color: #ff6600; margin-bottom: 5px; }
         .copyright-text { color: #888; font-size: 15px; margin-bottom: 20px; }
         
+        /* Developed by sadik Link Style */
         .dev-link {
             color: inherit;
             text-decoration: none;
@@ -280,9 +289,10 @@
 
 <div class="container">
     
+    <!-- Navbar Section -->
     <div class="navbar">
         <div class="nav-brand">
-            <img src="https://firebasestorage.googleapis.com/v0/b/pipobazer-8bcf2.appspot.com/o/image%2F1000052830.png?alt=media&token=37a64d23-8d98-4b83-a5fd-31cd3a48aadc" alt="Logo" class="nav-logo">
+            <img src="https://i.ibb.co/ZzhztYKN/logo.png" alt="Logo" class="nav-logo">
             <span class="nav-title">AFX ESPOS</span>
         </div>
         <div class="menu-icon" onclick="toggleMenu()">
@@ -290,14 +300,16 @@
         </div>
     </div>
 
+    <!-- Dropdown Mobile Menu -->
     <div class="mobile-menu" id="mobileMenu">
         <a href="#home" onclick="toggleMenu()">Home</a>
         <a href="#features" onclick="toggleMenu()">Feature</a>
         <a href="#download" onclick="toggleMenu()">Download</a>
     </div>
 
+    <!-- Home Section -->
     <div class="header" id="home">
-        <img src="https://firebasestorage.googleapis.com/v0/b/pipobazer-8bcf2.appspot.com/o/image%2F1000052830.png?alt=media&token=37a64d23-8d98-4b83-a5fd-31cd3a48aadc" alt="AFX ESPOS Logo" class="logo-img">
+        <img src="https://i.ibb.co/ZzhztYKN/logo.png" alt="AFX ESPOS Logo" class="logo-img">
         
         <h1>AFX ESPOS – Free Fire & Ludo Tournament App</h1>
         
@@ -317,6 +329,7 @@
         </div>
     </div>
 
+    <!-- Features Section -->
     <div id="features">
         <div class="section-header">
             <h2>অ্যাপের বৈশিষ্ট্য</h2>
@@ -354,6 +367,7 @@
         </div>
     </div>
 
+    <!-- Download Section -->
     <div class="cta-section" id="download">
         <h2 class="cta-title">এখনই ডাউনলোড করুন</h2>
         <div class="underline"></div>
@@ -366,23 +380,26 @@
         </div>
 
         <div class="btn-container">
-            <a href="https://github.com/afxespos/AFX-ESPOS/raw/main/AFX%20ESPOS.apk" class="download-btn">ডাউনলোড APK (12.98 MB)</a>
+            <a href="https://github.com/afxespos/AFX-ESPOS/raw/main/AFX%20ESPOS.apk" class="download-btn">ডাউনলোড APK (12.2 MB)</a>
             <div class="file-info" style="margin-top:10px; color:#888;">ভার্সন: 1.0 | আপডেট: ২০২৬</div>
         </div>
     </div>
 
+    <!-- Phone Showcase -->
     <div class="phone-showcase">
         <div class="phone-frame">
             <div class="phone-screen-logo">
-                <img src="https://firebasestorage.googleapis.com/v0/b/pipobazer-8bcf2.appspot.com/o/image%2F1000052830.png?alt=media&token=37a64d23-8d98-4b83-a5fd-31cd3a48aadc" alt="App Logo">
+                <img src="https://i.ibb.co/ZzhztYKN/logo.png" alt="App Logo">
             </div>
         </div>
     </div>
 
+    <!-- Footer Section -->
     <div class="footer-final">
-        <img src="https://firebasestorage.googleapis.com/v0/b/pipobazer-8bcf2.appspot.com/o/image%2F1000052830.png?alt=media&token=37a64d23-8d98-4b83-a5fd-31cd3a48aadc" alt="Small Logo" class="footer-logo-small">
+        <img src="https://i.ibb.co/ZzhztYKN/logo.png" alt="Small Logo" class="footer-logo-small">
         <span class="footer-title">AFX ESPOS</span>
         
+        <!-- Developed by sadik (টেলিগ্রাম লিংক সহ) -->
         <p class="copyright-text">
             © 2026 | 
             <a href="https://t.me/Developer_sadik1" class="dev-link" target="_blank">Developed by sadik</a>
@@ -396,7 +413,6 @@
 </div>
 
 <script>
-    // মোবাইল মেনু টগল ফাংশন
     function toggleMenu() {
         var menu = document.getElementById("mobileMenu");
         if (menu.classList.contains("show-menu")) {
