@@ -1,26 +1,6 @@
-<?php
-/*
-|--------------------------------------------------------------------------
-| সোর্স কোড প্রোটেকশন লেয়ার
-|--------------------------------------------------------------------------
-| এই অংশটুকু কেউ সোর্স কোড দেখতে চাইলে তাকে শুধু ৪৩ এরর দেখাবে।
-*/
-if (isset($_GET['view_source']) || strpos($_SERVER['HTTP_USER_AGENT'], 'CloudFlare') !== false) {
-    die('<html><head><title>403 Forbidden</title></head><body><center><h1>403 Forbidden</h1></center><hr><center>openresty</center></body></html>');
-}
-?>
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-<script>
-    document.addEventListener('contextmenu', event => event.preventDefault());
-    document.onkeydown = function(e) {
-        if(e.keyCode == 123 || (e.ctrlKey && e.shiftKey && (e.keyCode == 'I'.charCodeAt(0) || e.keyCode == 'J'.charCodeAt(0) || e.keyCode == 'C'.charCodeAt(0))) || (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0))) {
-            return false;
-        }
-    }
-</script>
-
    <meta name="google-site-verification" content="FJ49obY_cHSQb_7985nkSSUDWvkJ94jbfN5wh1oM-Cc" />
      
 <meta charset="UTF-8">
@@ -424,4 +404,4 @@ if (isset($_GET['view_source']) || strpos($_SERVER['HTTP_USER_AGENT'], 'CloudFla
 </script>
 
 </body>
-    </html>
+</html>
